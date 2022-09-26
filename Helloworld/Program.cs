@@ -1,33 +1,39 @@
-﻿using System;
+using System;
 
 namespace ConsoleApp1
 {
     class Program
     {
-        static void JobQuote(string Job)
+        static void CurrencyConv(double GBP, string Currency)
         {
-            if (Job == "Engineer")
+            if (Currency == "Euro")
             {
-                Console.WriteLine("The engineer has been, and is, the maker of history.");
+                double Total = (GBP * 1.12);
+                Console.WriteLine(Total);
             }
-            else if (Job == "Developer")
+            else if (Currency == "USD")
             {
-                Console.WriteLine("Logical thinking, passion and perseverance is paint on your pallet");
+                double Total = (GBP * 1.08);
+                Console.WriteLine(Total);
             }
-            else if (Job == "Analyst")
+            else if (Currency == "Yuan")
             {
-                Console.WriteLine("Seeing what other people can't see gives you great vision");
+                double Total = (GBP * 7.62);
+                Console.WriteLine(Total);
             }
-            else
+            else if (Currency == "Yen")
             {
-                Console.WriteLine("I'm sorry we can not find a quote for your job");
+                double Total = (GBP * 154.34);
+                Console.WriteLine(Total);
             }
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Please input your job");
-            string TempTing = Console.ReadLine();
-            JobQuote(TempTing);
+            Console.WriteLine("How much GBP?");
+            double GBP = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("To what currency");
+            string Currency = Console.ReadLine();
+            CurrencyConv(GBP, Currency);
         }
     }
 }
